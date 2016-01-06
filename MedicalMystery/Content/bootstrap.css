@@ -335,7 +335,7 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -3788,7 +3788,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  background-color: #a4d07f;
+  background-color: #6cd8a5;
 }
 
 .nav:before,
@@ -3826,7 +3826,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #b32022;
+  background-color: #51b485;
 }
 
 .nav > li.disabled > a {
@@ -3882,7 +3882,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555555;
+  color: #000000;
   cursor: default;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -4092,7 +4092,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
-  background-color: #a4d07f;
+  background-color: #6cd8a5;
 }
 
 .navbar-collapse:before,

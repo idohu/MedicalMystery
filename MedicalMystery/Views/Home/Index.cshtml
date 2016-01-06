@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Globalization
+@using MedicalMystery.Models
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -40,45 +42,22 @@
     <div class="col-md-8">
         <h2>New Surveys</h2>
         <ul class="event-list">
-            <li>
-                <time datetime="2014-07-20">
-                    <span class="day">12</span>
-                    <span class="month">Jan</span>
-                </time>
-                <div class="info">
-                    <h2 class="title">Oral Pain</h2>
-                    <p class="desc">Survey about oral pain - for people with no prior medical examination</p>
-                    <ul>
-                        <li style="width: 50%;"><a href="#website">Dr. Galit Almoznino DMD, M.Sc., MHA,</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <time datetime="2014-07-20">
-                    <span class="day">28</span>
-                    <span class="month">Dec</span>
-                </time>
-                <div class="info">
-                    <h2 class="title">Oral Pain</h2>
-                    <p class="desc">Survey about oral pain - for people with no prior medical examination</p>
-                    <ul>
-                        <li style="width: 50%;"><a href="#website">Dr. Galit Almoznino DMD, M.Sc., MHA,</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <time datetime="2014-07-20">
-                    <span class="day">4</span>
-                    <span class="month">Jul</span>
-                </time>
-                <div class="info">
-                    <h2 class="title">Oral Pain</h2>
-                    <p class="desc">Survey about oral pain - for people with no prior medical examination</p>
-                    <ul>
-                        <li style="width:50%;"><a href="#website">Dr. Galit Almoznino DMD, M.Sc., MHA,</a></li>
-                    </ul>
-                </div>
-            </li>
+            @foreach (QuestionnaireModel q in ViewBag.Questionnaires)
+            {
+                <li>
+                    <time datetime="2014-07-20">
+                        <span class="day">@q.QuestionnaireStartDate.Day</span>
+                        <span class="month">@q.QuestionnaireStartDate.ToString("MMM",CultureInfo.CurrentCulture)</span>
+                    </time>
+                    <div class="info">
+                        <h2 class="title">@q.QuestionnaireName</h2>
+                        <p class="desc">@q.QuestionnaireDescription</p>
+                        <ul>
+                            <li style="width: 50%;"><a href="#website">@q.Doctor</a></li>
+                        </ul>
+                    </div>
+                </li>
+            }
         </ul>
     </div>
 

@@ -47,8 +47,8 @@ textarea {
 		text-transform: uppercase;
 	}
 	.event-list > li:nth-child(even) > time {
-		background-color: rgb(165, 82, 167);
-	}
+    background-color: #FCB221;
+}
 	.event-list > li > time > span {
 		display: none;
 	}
@@ -145,3 +145,18 @@ textarea {
 			bottom: 0px;
 		}
 	}
+
+    .navbar-collapse {
+
+    background-color: #92E4EA;
+}
+
+.nav {
+
+    background-color: #92E4EA;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #0499DD;
+}
