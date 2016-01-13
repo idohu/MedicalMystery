@@ -3,14 +3,35 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <strong>@User.Identity.GetUserName()</strong>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
+                <ul class="dropdown-menu navbar-login">
+                    <li>
+                        Hello @User.Identity.GetUserName()!
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage My Account", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
+
+                    </li>
+                    <li>
+                        @Html.ActionLink("My Surveys", "Index", "Home")
+
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+
+
+            </li>
+
+        </ul>
     }
 }
 else

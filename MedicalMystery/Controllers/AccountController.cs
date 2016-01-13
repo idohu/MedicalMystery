@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MedicalMystery.Models;
@@ -151,8 +152,14 @@ namespace MedicalMystery.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                //var context = new ApplicationDbContext();
+                //context.Roles.Add(new IdentityRole("User"));
+                //context.Roles.Add(new IdentityRole("Doctor"));
+                //context.Roles.Add(new IdentityRole("Admin"));
+                //context.SaveChanges();
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password);
+                UserManager.AddToRole(user.Id, model.RegistrationType.ToString());
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

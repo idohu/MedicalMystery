@@ -51,7 +51,15 @@
                     </time>
                     <div class="info">
                         <h2 class="title">@q.QuestionnaireName</h2>
-                        <p class="desc">@q.QuestionnaireDescription</p>
+                        <p class="desc">@if (q.QuestionnaireDescription.Length > 100)
+                        {
+                            @q.QuestionnaireDescription.Substring(0, 100)
+                            <span>...</span>
+                        }
+                        else
+                        {
+                            @q.QuestionnaireDescription;
+                        }</p>
                         <ul>
                             <li style="width: 50%;"><a href="#website">@q.Doctor</a></li>
                         </ul>

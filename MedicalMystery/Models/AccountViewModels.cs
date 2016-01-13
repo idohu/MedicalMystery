@@ -79,6 +79,10 @@ namespace MedicalMystery.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Registration Type")]
+        public AccountType RegistrationType { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -108,5 +112,12 @@ namespace MedicalMystery.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+    }
+
+    public enum AccountType
+    {
+        User,
+        Doctor,
+        Admin
     }
 }

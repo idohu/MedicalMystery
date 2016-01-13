@@ -23,6 +23,8 @@ namespace MedicalMystery
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/site").Include("~/Scripts/scripts.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/fonts/font-awesome-4.5.0/css/font-awesome.css",

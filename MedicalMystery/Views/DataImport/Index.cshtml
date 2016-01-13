@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Basic File Upload</h2>
+<div style="overflow: scroll">
+    <table border="1">
+        <thead>
+            <tr>
+                @for (int i = 0; i < Model.Columns.Count; i++)
+                {
+                    <th>@Model.Columns[i].Caption </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Rows.Count; i++)
+            {
+                <tr>
+                    @for (int j = 0; j < Model.Rows[i].ItemArray.Length; j++)
+                    {
+                        <td>@Model.Rows[i][j].ToString() </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
